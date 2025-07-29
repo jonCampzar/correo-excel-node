@@ -1,0 +1,26 @@
+{
+  "name": "correo-excel-node",
+  "version": "1.0.0",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jonCampzar/correo-excel-node.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/jonCampzar/correo-excel-node/issues"
+  },
+  "homepage": "https://github.com/jonCampzar/correo-excel-node#readme",
+  "description": "",
+  "dependencies": {
+    "body-parser": "^2.2.0",
+    "express": "^5.1.0",
+    "nodemailer": "^7.0.5"
+  }
+}
