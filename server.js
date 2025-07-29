@@ -11,7 +11,6 @@ const PORT = process.env.PORT || 3000;
 app.use(bodyParser.json({ limit: '10mb' }));
 app.use(bodyParser.urlencoded({ extended: true, limit: '10mb' }));
 
-const cors = require('cors');
 app.use(cors());
 
 
