@@ -1,4 +1,6 @@
-/*const express = require('express');
+require('dotenv').config();
+
+const express = require('express');
 const nodemailer = require('nodemailer');
 const bodyParser = require('body-parser');
 
@@ -7,6 +9,10 @@ const PORT = process.env.PORT || 3000;
 
 app.use(bodyParser.json({ limit: '10mb' }));
 app.use(bodyParser.urlencoded({ extended: true, limit: '10mb' }));
+
+const cors = require('cors');
+app.use(cors());
+
 
 app.post('/enviar-excel', async (req, res) => {
     const { archivo, correo } = req.body;
@@ -50,20 +56,4 @@ app.get('/', (req, res) => {
 
 app.listen(PORT, () => {
     console.log('Servidor corriendo en el puerto ${PORT}');
-});*/
-const express = require('express');
-const app = express();
-const PORT = process.env.PORT || 3000;
-
-app.use(express.json());
-
-// Ruta de prueba simple
-app.get('/ping', (req, res) => {
-    res.send('pong desde Render 3.0 🚀');
-});
-
-// Aquí puedes agregar otras rutas, como /enviar-excel
-
-app.listen(PORT, () => {
-    console.log("Servidor corriendo en el puerto ${PORT}");
 });
