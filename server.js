@@ -59,7 +59,7 @@ app.use(express.json());
 
 // Ruta de prueba simple
 app.get('/ping', (req, res) => {
-    res.send('pong desde Render 2.0 🚀');
+    res.send('pong desde Render 3.0 🚀');
 });
 
 // Aquí puedes agregar otras rutas, como /enviar-excel
