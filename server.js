@@ -32,8 +32,8 @@ app.post('/enviar-excel', async (req, res) => {
     const mailOptions = {
         from: process.env.CORREO_GMAIL,
         to: correo,
-        subject: 'Archivo Excel desde tu app',
-        text: 'Te adjunto el archivo Excel generado desde la app.',
+        subject: 'Archivo Excel generado desde tu app',
+        text: 'Hola, te adjunto el archivo Excel generado desde la app.',
         attachments: [{
             filename: 'preliminar.xlsx',
             content: Buffer.from(archivo, 'base64'),
