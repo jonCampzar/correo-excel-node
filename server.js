@@ -1,4 +1,4 @@
-const express = require('express');
+/*const express = require('express');
 const nodemailer = require('nodemailer');
 const bodyParser = require('body-parser');
 
@@ -47,6 +47,22 @@ app.post('/enviar-excel', async (req, res) => {
 app.get('/', (req, res) => {
     res.send("Servidor activo para enviar Excel por correo.");
 });
+
+app.listen(PORT, () => {
+    console.log('Servidor corriendo en el puerto ${PORT}');
+});*/
+const express = require('express');
+const app = express();
+const PORT = process.env.PORT || 3000;
+
+app.use(express.json());
+
+// Ruta de prueba simple
+app.get('/ping', (req, res) => {
+    res.send('pong desde Render 🚀');
+});
+
+// Aquí puedes agregar otras rutas, como /enviar-excel
 
 app.listen(PORT, () => {
     console.log('Servidor corriendo en el puerto ${PORT}');
