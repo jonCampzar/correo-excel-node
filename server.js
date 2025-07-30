@@ -29,13 +29,14 @@ app.post('/enviar-excel', async (req, res) => {
         }
     });
 
+    const fechaActual = new Date().toISOString().split('T')[0]; // Formato: YYYY-MM-DD
     const mailOptions = {
         from: process.env.CORREO_GMAIL,
         to: correo,
         subject: 'Archivo Excel generado desde tu app',
-        text: 'Hola, te adjunto el archivo Excel generado desde la app.',
+        text: 'Hola preciosa, adjunto el archivo Excel generado desde la app.',
         attachments: [{
-            filename: 'preliminar.xlsx',
+            filename: `preliminar_${fechaActual}.xlsx`,
             content: Buffer.from(archivo, 'base64'),
             encoding: 'base64'
         }]
@@ -43,7 +44,7 @@ app.post('/enviar-excel', async (req, res) => {
 
     try {
         await transporter.sendMail(mailOptions);
-        res.send('Correo enviado correctamente');
+        res.send('Correo enviado exitosamente');
     } catch (error) {
         console.error(error);
         res.status(500).send('Error al enviar el correo');
@@ -55,5 +56,5 @@ app.get('/', (req, res) => {
 });
 
 app.listen(PORT, () => {
-    console.log('Servidor corriendo en el puerto ${PORT}');
+    console.log(`Servidor corriendo en el puerto ${PORT}`);
 });
